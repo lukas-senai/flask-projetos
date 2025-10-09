@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Produtos</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            background-color: white;
+            width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .produto {
+            border: 1px solid #ddd;
+            background-color: #fafafa;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .produto h3 {
+            color: #007bff;
+            margin: 5px 0;
+        }
+
+        .preco {
+            color: green;
+            font-weight: bold;
+        }
+
+        .categoria {
+            color: #666;
+            font-size: 14px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        p.voltar {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Produtos da Loja</h1>
+
+        {% for produto in produtos %}
+        <div class="produto">
+            <h3>{{ produto.nome }}</h3>
+            <p class="categoria">Categoria: {{ produto.categoria }}</p>
+            <p class="preco">Preço: R$ {{ produto.preco }}</p>
+        </div>
+        {% endfor %}
+
+        <p class="voltar"><a href="/">Voltar</a></p>
+    </div>
+</body>
+</html>
