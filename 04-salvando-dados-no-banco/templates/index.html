@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo de Filmes</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        .filme {
+            background-color: white;
+            border: 1px solid #ddd;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        a {
+            text-decoration: none;
+            background-color: #3498db;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+        }
+
+        a:hover {
+            background-color: #217dbb;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🎬 Catálogo de Filmes</h1>
+
+    <a href="/novo">Cadastrar novo filme</a>
+
+    <div class="container">
+        {% for filme in filmes %}
+        <div class="filme">
+            <h3>{{ filme.titulo }}</h3>
+            <p><strong>Gênero:</strong> {{ filme.genero }}</p>
+            <p><strong>Ano:</strong> {{ filme.ano }}</p>
+            <p><strong>Avaliação:</strong> {{ filme.avaliacao }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>
