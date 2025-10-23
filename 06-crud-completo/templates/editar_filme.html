@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Filme</title>
+    <style>
+        body { font-family: Arial; background-color: #f4f4f4; text-align: center; }
+        form { background: white; padding: 20px; margin: 40px auto; width: 300px; border-radius: 8px; }
+        label { display: block; margin-top: 10px; }
+        input { width: 90%; padding: 6px; }
+        button {
+            margin-top: 15px; padding: 8px 15px;
+            background: #f1c40f; color: white; border: none; border-radius: 5px;
+        }
+        a { display: block; margin-top: 10px; color: #3498db; }
+    </style>
+</head>
+<body>
+    <h1>✏️ Editar Filme</h1>
+
+    <form method="POST" action="/atualizar/{{ filme.id }}">
+        <label>Título:</label>
+        <input type="text" name="titulo" value="{{ filme.titulo }}" required>
+        <label>Gênero:</label>
+        <input type="text" name="genero" value="{{ filme.genero }}" required>
+        <label>Ano:</label>
+        <input type="number" name="ano" value="{{ filme.ano }}" required>
+        <label>Avaliação:</label>
+        <input type="number" step="0.1" name="avaliacao" value="{{ filme.avaliacao }}" required>
+        <button type="submit">Atualizar</button>
+    </form>
+
+    <a href="/filmes">Voltar</a>
+</body>
+</html>
